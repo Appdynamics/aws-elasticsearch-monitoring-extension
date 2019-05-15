@@ -1,0 +1,119 @@
+# Use this only if SIM is enabled
+#metricPrefix: "Custom Metrics|Amazon Elasticsearch|"
+
+# If SIM is not enabled, then use this
+metricPrefix: "Server|Component:<COMPONENT_ID>|Custom Metrics|Amazon Elasticsearch|"
+#To find the <COMPONENT_ID> in your environment,
+#please follow the screenshot https://docs.appdynamics.com/display/PRO42/Build+a+Monitoring+Extension+Using+Java
+
+# awsAccessKey, awsSecretKey, displayAccountName are mandatory fields.
+accounts:
+  - awsAccessKey: ""
+    awsSecretKey: ""
+    displayAccountName: "AppD"
+
+    # Regions where Elasticsearch service is created
+    # Allowed values: Please refer to regionEndPoints configuration in this file.
+    regions: ["us-west-2"]
+
+credentialsDecryptionConfig:
+  enableDecryption: "false"
+  encryptionKey:
+
+proxyConfig:
+  host:
+  port:
+  username:
+  password:
+
+# Filters metrics based on provided Dimension values.
+# Accepts comma separated values and regex patterns.
+# If `values:[".*"]` is used, all are monitored,
+# If `values:[]` is used, none are monitored
+
+dimensions:
+  - name: "DomainName"
+    displayName: "Domain"
+    values: [".*"]
+  - name: "ClientId"
+    displayName: "Client Id"
+    values: [".*"]
+  - name: "NodeId"
+    displayName: "Node Id"
+    values: [".*"]
+
+# Detailed will fire CloudWatch API calls every 1 minute
+# Basic will poll CloudWatch API every 5 min
+
+cloudWatchMonitoring: "Basic"
+
+#If you want any other interval ( other than the mentioned "Basic" or "Detailed" in the above configuration )
+#configure it here, if not leave it empty. This value is in minutes
+#cloudWatchMonitoringInterval: 0
+
+concurrencyConfig:
+  noOfAccountThreads: 3
+  noOfRegionThreadsPerAccount: 3
+  noOfMetricThreadsPerRegion: 3
+  #Thread timeout in seconds
+  threadTimeOut: 30
+
+# Global metrics config for all accounts
+metricsConfig:
+  # By default, all metrics retrieved from CloudWatch are 'Average' values.
+  # This option allows you to override the metric type.
+  # name supports regex
+  # Allowed statTypes are: ave, max, min, sum, samplecount
+  # Note: Irrespective of the metric type, value will still be reported as
+  # Observed value to the Controller
+  includeMetrics:
+    - name: "Nodes"
+      alias: "Node"
+      statType: "ave"
+      delta: false
+      multiplier: 1
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+    - name: "MasterCPUUtilization"
+      alias: "MasterCPUUtilization"
+      statType: "ave"
+      delta: false
+      multiplier: 1
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+
+  metricsTimeRange:
+    startTimeInMinsBeforeNow: 9
+    endTimeInMinsBeforeNow: 4
+
+  # Rate limit ( per second ) for GetMetricStatistics, default value is 400.
+  # https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_limits.html
+  getMetricStatisticsRateLimit: 400
+
+  # The max number of retry attempts for failed retryable requests
+  # (ex: 5xx error responses from a service) or throttling errors
+
+  maxErrorRetrySize: 3
+
+regionEndPoints:
+  us-east-1 : monitoring.us-east-1.amazonaws.com
+  us-east-2 : monitoring.us-east-2.amazonaws.com
+  us-west-1 : monitoring.us-west-1.amazonaws.com
+  us-west-2 : monitoring.us-west-2.amazonaws.com
+  ap-northeast-1 : monitoring.ap-northeast-1.amazonaws.com
+  ap-northeast-2: monitoring.ap-northeast-2.amazonaws.com
+  ap-northeast-3 : monitoring.ap-northeast-3.amazonaws.com
+  ap-south-1 : monitoring.ap-south-1.amazonaws.com
+  ap-southeast-1 : monitoring.ap-southeast-1.amazonaws.com
+  ap-southeast-2 : monitoring.ap-southeast-2.amazonaws.com
+  ca-central-1 : monitoring.ca-central-1.amazonaws.com
+  cn-north-1 : monitoring.cn-north-1.amazonaws.com.cn
+  cn-northwest-1 : monitoring.cn-northwest-1.amazonaws.com.cn
+  eu-central-1 : monitoring.eu-central-1.amazonaws.com
+  eu-west-1 : monitoring.eu-west-1.amazonaws.com
+  eu-west-2 : monitoring.eu-west-2.amazonaws.com
+  eu-west-3 : monitoring.eu-west-3.amazonaws.com
+  sa-east-1 : monitoring.sa-east-1.amazonaws.com
+  us-gov-west-1 : monitoring.us-gov-west-1.amazonaws.com
