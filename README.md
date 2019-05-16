@@ -130,9 +130,9 @@ For any support related questions, you can also contact [help@appdynamics.com](m
 ## Contributing
 Always feel free to fork and contribute any changes directly here on [GitHub](https://github.com/Appdynamics/aws-redshift-monitoring-extension).
 ## Version
-   |Name|Version|
-   |---|---|
-   |Extension Version|1.0.0|
-   |Controller Compatibility|4.4 or Later|
-   |Last Update|May 16, 2019|
-   |List of Changes|[Change Log](https://github.com/Appdynamics/aws-elasticsearch-monitoring-extension/blob/master/CHANGELOG.md)|
+|Name|Version|
+|---|---|
+|Extension Version|1.0.0|
+|Controller Compatibility|4.4 or Later|
+|Last Update|May 16, 2019|
+|List of Changes|[Change Log](https://github.com/Appdynamics/aws-elasticsearch-monitoring-extension/blob/master/CHANGELOG.md)|
