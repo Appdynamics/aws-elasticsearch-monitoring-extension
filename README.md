@@ -132,7 +132,7 @@ Always feel free to fork and contribute any changes directly here on [GitHub](ht
 ## Version
 |Name|Version|
 |---|---|
-|Extension Version|1.0.0|
+|Extension Version|1.0.1|
 |Controller Compatibility|4.4 or Later|
-|Last Update|May 16, 2019|
+|Last Update|May 27, 2020|
 |List of Changes|[Change Log](https://github.com/Appdynamics/aws-elasticsearch-monitoring-extension/blob/master/CHANGELOG.md)|

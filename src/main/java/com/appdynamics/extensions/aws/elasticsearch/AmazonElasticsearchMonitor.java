@@ -19,7 +19,13 @@ import com.appdynamics.extensions.aws.SingleNamespaceCloudwatchMonitor;
 import com.appdynamics.extensions.aws.collectors.NamespaceMetricStatisticsCollector;
 import com.appdynamics.extensions.aws.config.Configuration;
 import com.appdynamics.extensions.aws.metric.processors.MetricsProcessor;
-import org.apache.log4j.Logger;
+import com.appdynamics.extensions.logging.ExtensionsLoggerFactory;
+import org.slf4j.Logger;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import static com.appdynamics.extensions.aws.elasticsearch.util.Constants.DEFAULT_METRIC_PREFIX;
 import static com.appdynamics.extensions.aws.elasticsearch.util.Constants.MONITOR_NAME;
@@ -28,7 +34,7 @@ import static com.appdynamics.extensions.aws.elasticsearch.util.Constants.MONITO
  * @author pradeep.nair
  */
 public class AmazonElasticsearchMonitor extends SingleNamespaceCloudwatchMonitor<Configuration> {
-    private static final Logger LOGGER = Logger.getLogger(AmazonElasticsearchMonitor.class);
+    private static final Logger LOGGER = ExtensionsLoggerFactory.getLogger(AmazonElasticsearchMonitor.class);
     public AmazonElasticsearchMonitor(){
         super(Configuration.class);
         LOGGER.info(String.format("Using AWS Elasticsearch Monitor Version [%s]", this.getClass().getPackage().getImplementationTitle()));
@@ -63,8 +69,8 @@ public class AmazonElasticsearchMonitor extends SingleNamespaceCloudwatchMonitor
     }
 
     @Override
-    protected int getTaskCount() {
-        return 3;
+    protected List<Map<String, ?>> getServers() {
+        return new ArrayList<Map<String, ?>>();
     }
 
     private MetricsProcessor createMetricsProcessor(Configuration config) {

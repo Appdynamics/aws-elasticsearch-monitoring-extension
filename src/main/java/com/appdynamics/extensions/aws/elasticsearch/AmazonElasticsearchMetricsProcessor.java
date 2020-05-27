@@ -24,8 +24,9 @@ import com.appdynamics.extensions.aws.metric.StatisticType;
 import com.appdynamics.extensions.aws.metric.processors.MetricsProcessor;
 import com.appdynamics.extensions.aws.metric.processors.MetricsProcessorHelper;
 import com.appdynamics.extensions.aws.predicate.MultiDimensionPredicate;
+import com.appdynamics.extensions.logging.ExtensionsLoggerFactory;
 import com.appdynamics.extensions.metrics.Metric;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +41,7 @@ import static com.appdynamics.extensions.aws.elasticsearch.util.Constants.NAMESP
  * @author pradeep.nair
  */
 public class AmazonElasticsearchMetricsProcessor implements MetricsProcessor {
-    private static final Logger LOGGER = Logger.getLogger(AmazonElasticsearchMetricsProcessor.class);
+    private static final Logger LOGGER = ExtensionsLoggerFactory.getLogger(AmazonElasticsearchMetricsProcessor.class);
 
     private final List<IncludeMetric> includeMetrics;
     private final List<Dimension> dimensions;
