@@ -495,3 +495,6 @@ regionEndPoints:
   eu-west-3 : monitoring.eu-west-3.amazonaws.com
   sa-east-1 : monitoring.sa-east-1.amazonaws.com
   us-gov-west-1 : monitoring.us-gov-west-1.amazonaws.com
+
+#Encryption key for your controllerInfo password
+encryptionKey: "abcd"
