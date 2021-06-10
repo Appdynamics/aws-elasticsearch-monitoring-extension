@@ -1,4 +1,7 @@
 # AWS Elasticsearch Monitoring Extension
+## 1.0.3
+Updated aws-commons to 2.2.5
+
 ## 1.0.2
 Updated aws-commons to 2.2.4
 
