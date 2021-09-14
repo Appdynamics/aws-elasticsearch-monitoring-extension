@@ -72,8 +72,8 @@ In order to use the extension, you need to update the config.yml file that is pr
     |alias|metric name|Any string|The substitute name to be used in the metric browser instead of metric name.|
     |statType|"ave"|"ave", "sum", "min", "max"|AWS configured values as returned by API|
     |aggregationType|"AVERAGE"|"AVERAGE", "SUM", "OBSERVATION"|[Aggregation qualifier](https://docs.appdynamics.com/display/latest/Build+a+Monitoring+Extension+Using+Java)|
-    |timeRollUpType|"AVERAGE"| "AVERAGE", "SUM", "CURRENT"|[Time roll-up qualifier](https://docs.appdynamics.com/display/PRO44/Build+a+Monitoring+Extension+Using+Java)|
-    |clusterRollUpType|"INDIVIDUAL"|"INDIVIDUAL", "COLLECTIVE"|[Cluster roll-up qualifier](https://docs.appdynamics.com/display/PRO44/Build+a+Monitoring+Extension+Using+Java)|
+    |timeRollUpType|"AVERAGE"| "AVERAGE", "SUM", "CURRENT"|[Time roll-up qualifier](https://docs.appdynamics.com/display/latest/Build+a+Monitoring+Extension+Using+Java)|
+    |clusterRollUpType|"INDIVIDUAL"|"INDIVIDUAL", "COLLECTIVE"|[Cluster roll-up qualifier](https://docs.appdynamics.com/display/latest/Build+a+Monitoring+Extension+Using+Java)|
     |multiplier|1|Any number|Value with which the metric needs to be multiplied.                                                            |
     |convert|null|Any key value map|Set of key value pairs that indicates the value to which the metrics need to be transformed. eg: UP:0, DOWN:1|
     |delta|false|true, false|If enabled, gives the delta values of metrics instead of actual values.|
