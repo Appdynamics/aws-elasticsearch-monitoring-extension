@@ -86,7 +86,7 @@ metricsConfig:
       aggregationType: "OBSERVATION"
       timeRollUpType: "AVERAGE"
       clusterRollUpType: "INDIVIDUAL"
-    - name: "ClusterStatus.green"
+    - name: "ClusterStatus.yellow"
       alias: "Cluster Status|Yellow"
       statType: "max"
       delta: false
