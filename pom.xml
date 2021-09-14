@@ -32,8 +32,8 @@
     <dependencies>
         <dependency>
             <groupId>com.appdynamics</groupId>
-            <artifactId>machine-agent</artifactId>
-            <version>3.7.11</version>
+            <artifactId>machineagent-repackaged</artifactId>
+            <version>4.0.5.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -174,4 +174,7 @@
             <url>https://github.com/Appdynamics/maven-repo/raw/master/releases</url>
         </repository>
     </repositories>
+    <scm>
+        <connection>scm:git:https://github.com/Appdynamics/aws-elasticsearch-monitoring-extension.git</connection>
+    </scm>
 </project>
