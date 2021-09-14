@@ -175,6 +175,6 @@
         </repository>
     </repositories>
     <scm>
-        <connection>scm:git:https://github.com/Appdynamics/azure-servicebus-monitoring-extension.git</connection>
+        <connection>scm:git:https://github.com/Appdynamics/aws-elasticsearch-monitoring-extension.git</connection>
     </scm>
 </project>
